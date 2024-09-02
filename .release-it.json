@@ -2,14 +2,20 @@
   "git": {
     "requireCleanWorkingDir": true,
     "tagName": "v${version}",
-    "commitMessage": "chore: release v${version}",
+    "commitMessage": "chore: release v${version} - FlyFlat Deals",
     "push": true
+  },
+  "github": {
+    "release": true,
+    "tokenRef": "GITHUB_TOKEN",
+    "releaseName": "🚀 New FlyFlat Deals Release: v${version}",
+    "releaseNotes": "## What’s new in FlyFlat Deals v${version}:\n\n${changelog}\n\nThank you for using FlyFlat Deals!"
   },
   "npm": {
     "publish": false
   },
-  "github": {
-    "release": true,
-    "tokenRef": "GITHUB_TOKEN"
+  "hooks": {
+    "before:init": ["echo 'Preparing FlyFlat Deals release v${version}'"],
+    "after:release": ["echo '🚀 FlyFlat Deals v${version} is now live!'"]
   }
 }
