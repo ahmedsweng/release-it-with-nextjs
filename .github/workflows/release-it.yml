@@ -3,13 +3,18 @@ name: Release
 on:
   push:
     branches:
-      - main # or 'stage'
+      - main
+      - stage
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
