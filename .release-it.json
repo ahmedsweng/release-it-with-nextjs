@@ -13,9 +13,5 @@
   },
   "npm": {
     "publish": false
-  },
-  "hooks": {
-    "before:init": ["echo 'Preparing FlyFlat Deals release v${version}'"],
-    "after:release": ["echo '🚀 FlyFlat Deals v${version} is now live!'"]
   }
 }
